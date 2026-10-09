@@ -74,6 +74,8 @@ The script reads the following values automatically:
 - `rpcpassword`
 - `rpcport`
 
+For finding the port, go to `C:\Users\[USERNAME]\AppData\Roaming\MultiChain\fakedetectchain` and check the variable `default-rpc-port = PORT_NUMBER`.
+
 To initialize the local chain on Windows, run:
 
 ```bat

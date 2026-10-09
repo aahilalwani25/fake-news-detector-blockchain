@@ -15,7 +15,7 @@ def get_credentials(chain_name="fakedetectchain"):
     else:
         conf = os.path.expanduser(f"~/.multichain/{chain_name}/multichain.conf")
         
-    user, pwd, port = "multichainrpc", "", 5768
+    user, pwd, port = "multichainrpc", "", 7216
     print(f"Loading credentials from: {conf}")
     with open(conf, "r") as f:
         for line in f:
@@ -32,6 +32,7 @@ def get_credentials(chain_name="fakedetectchain"):
 if __name__ == "__main__":
     CHAIN = "fakedetectchain"
     user, pwd, port = get_credentials(CHAIN)
+    print(f"Using credentials - User: {user}, Port: {port}")
     
     # Initialize MultiChainClient using official interface
     mc = MultiChainClient(host="127.0.0.1", port=port, username=user, password=pwd, usessl=False)
