@@ -3,7 +3,7 @@ import re
 import hashlib
 import json
 from multichain import MultiChainClient
-from main import NLPFeatureExtractor
+from nlp_feature_extractor import NLPFeatureExtractor
 
 # ----------------------------------------------------------------------
 # 1. Load Local Chain Credentials
@@ -16,6 +16,7 @@ def get_credentials(chain_name="fakedetectchain"):
         conf = os.path.expanduser(f"~/.multichain/{chain_name}/multichain.conf")
         
     user, pwd, port = "multichainrpc", "", 5768
+    print(f"Loading credentials from: {conf}")
     with open(conf, "r") as f:
         for line in f:
             line = line.strip()
